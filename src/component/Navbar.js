@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 export default function Navbar(props) {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container-fluid">
           <a className="navbar-brand" href="/">
             {props.title}
@@ -29,7 +29,7 @@ export default function Navbar(props) {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/">
+                <a className="nav-link" href="about">
                   About
                 </a>
               </li>
