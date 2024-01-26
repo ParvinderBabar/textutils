@@ -1,17 +1,31 @@
-// import logo from "./logo.svg";
-import "./App.css";
+import React from "react";
 import Navbar from "./component/Navbar";
-
 import FormText from "./component/FormText";
+import About from "./component/About";
+import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
 
 function App() {
   return (
-    <>
-      <Navbar title="TextUtils" />
-      <div className="container my-3">
-        <FormText heading="Write Text to analyze" />
-      </div>
-    </>
+    <Router>
+      <>
+        <Navbar title="TextUtils" />
+
+        <Routes>
+          <Route
+            path="/"
+            element={<FormText heading="Write Text to analyze" />}
+          />
+          <Route
+            path="/about"
+            element={
+              <div className="container my-3">
+                <About />
+              </div>
+            }
+          />
+        </Routes>
+      </>
+    </Router>
   );
 }
 

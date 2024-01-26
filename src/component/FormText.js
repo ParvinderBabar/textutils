@@ -19,7 +19,7 @@ export default function FormText(props) {
   const [text, setText] = useState("");
   return (
     <>
-      <div>
+      <div className="container">
         <div className="mb-3">
           <h1> {props.heading}</h1>
           <textarea
@@ -41,7 +41,7 @@ export default function FormText(props) {
         </button>
       </div>
 
-      <div container my-3>
+      <div className="container my-3">
         <h1>Overall analyses of text</h1>
         <p>NUMBER OF WORDS:{text.split(" ").length}</p>
         <p>NUMBER OF CHARACTERS:{text.length}</p>
