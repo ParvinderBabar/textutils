@@ -30,22 +30,35 @@ export default function FormText(props) {
             rows="8"
           />
         </div>
-        <button className="btn btn-primary mx-5" onClick={uppercase}>
+        <button className="btn btn-primary mx-2 my-2" onClick={uppercase}>
           ConvertUppercase
         </button>
-        <button className="btn btn-primary" onClick={lowercase}>
+        <button className="btn btn-primary mx-2 my-2" onClick={lowercase}>
           ConvertUppercase
         </button>
-        <button className="btn btn-primary my-3" onClick={handleWork}>
+        <button className="btn btn-primary mx-2 my-2" onClick={handleWork}>
           Clear
         </button>
       </div>
 
       <div className="container my-3">
         <h1>Overall analyses of text</h1>
-        <p>NUMBER OF WORDS:{text.split(" ").length}</p>
+        <p>
+          NUMBER OF WORDS:
+          {
+            text.split(" ").filter((element) => {
+              return element.length !== 0;
+            }).length
+          }
+        </p>
         <p>NUMBER OF CHARACTERS:{text.length}</p>
-        <p>TIME TAKEN:{0.008 * text.split(" ").length}</p>
+        <p>
+          TIME TAKEN:
+          {0.008 *
+            text.split(" ").filter((element) => {
+              return element.length !== 0;
+            }).length}
+        </p>
         <h2>Preview </h2>
         {text}
       </div>
